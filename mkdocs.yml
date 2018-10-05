@@ -2,6 +2,7 @@ site_name: My Memo
 
 pages:
 - [index.md, Home]
+- [memo.md, Home]
 
 # Configuration
 theme:
