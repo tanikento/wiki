@@ -1,5 +1,8 @@
 site_name: My Memo
 
+pages:
+- [index.md, Home]
+
 # Configuration
 theme:
   name: 'material'
