@@ -1,3 +1,3 @@
 Hello!Hello!
 
-https://tanikento.github.io/wiki/memo
+[MEMO](https://tanikento.github.io/wiki/memo)
