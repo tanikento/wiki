@@ -1,0 +1,30 @@
+site_name: My Memo
+
+# Configuration
+theme:
+  name: 'material'
+  language: 'ja'
+  feature:
+    tabs: true
+  palette:
+    primary: 'indigo'
+    accent: 'indigo'
+  font:
+    text: 'Roboto'
+    code: 'Roboto Mono'
+
+# 日本語検索設定
+extra:
+  search:
+    language: 'jp'
+
+# Extensions
+markdown_extensions:
+  - admonition
+  - footnotes
+  - codehilite:
+      guess_lang: false
+  - toc:
+      permalink: true
+  - pymdownx.tasklist:
+      custom_checkbox: true
