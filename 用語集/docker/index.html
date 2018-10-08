@@ -1,0 +1,696 @@
+
+
+
+
+<!DOCTYPE html>
+<html lang="ja" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      <meta http-equiv="x-ua-compatible" content="ie=edge">
+      
+      
+      
+      
+        <meta name="lang:clipboard.copy" content="クリップボードへコピー">
+      
+        <meta name="lang:clipboard.copied" content="コピーしました">
+      
+        <meta name="lang:search.language" content="jp">
+      
+        <meta name="lang:search.pipeline.stopwords" content="True">
+      
+        <meta name="lang:search.pipeline.trimmer" content="True">
+      
+        <meta name="lang:search.result.none" content="何も見つかりませんでした">
+      
+        <meta name="lang:search.result.one" content="1件見つかりました">
+      
+        <meta name="lang:search.result.other" content="#件見つかりました">
+      
+        <meta name="lang:search.tokenizer" content="[\s\-　、。，．]+">
+      
+      <link rel="shortcut icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.0.3, mkdocs-material-3.0.4">
+    
+    
+      
+        <title>Docker - Tani Memo</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/application.451f80e5.css">
+      
+        <link rel="stylesheet" href="../../assets/stylesheets/application-palette.22915126.css">
+      
+      
+        
+        
+        <meta name="theme-color" content="#795548">
+      
+    
+    
+      <script src="../../assets/javascripts/modernizr.1aa3b519.js"></script>
+    
+    
+      
+        <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700|Roboto+Mono">
+        <style>body,input{font-family:"Roboto","Helvetica Neue",Helvetica,Arial,sans-serif}code,kbd,pre{font-family:"Roboto Mono","Courier New",Courier,monospace}</style>
+      
+    
+    <link rel="stylesheet" href="../../assets/fonts/material-icons.css">
+    
+    
+  </head>
+  
+    
+    
+    <body dir="ltr" data-md-color-primary="brown" data-md-color-accent="indigo">
+  
+    <svg class="md-svg">
+      <defs>
+        
+        
+      </defs>
+    </svg>
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" data-md-component="overlay" for="__drawer"></label>
+    
+      <a href="../../#docker" tabindex="1" class="md-skip">
+        Skip to content
+      </a>
+    
+    
+      <header class="md-header" data-md-component="header">
+  <nav class="md-header-nav md-grid">
+    <div class="md-flex">
+      <div class="md-flex__cell md-flex__cell--shrink">
+        <a href="../.." title="Tani Memo" class="md-header-nav__button md-logo">
+          
+            <i class="md-icon"></i>
+          
+        </a>
+      </div>
+      <div class="md-flex__cell md-flex__cell--shrink">
+        <label class="md-icon md-icon--menu md-header-nav__button" for="__drawer"></label>
+      </div>
+      <div class="md-flex__cell md-flex__cell--stretch">
+        <div class="md-flex__ellipsis md-header-nav__title" data-md-component="title">
+          
+            
+              <span class="md-header-nav__topic">
+                Tani Memo
+              </span>
+              <span class="md-header-nav__topic">
+                Docker
+              </span>
+            
+          
+        </div>
+      </div>
+      <div class="md-flex__cell md-flex__cell--shrink">
+        
+          
+            <label class="md-icon md-icon--search md-header-nav__button" for="__search"></label>
+            
+<div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" placeholder="検索" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="query" data-md-state="active">
+      <label class="md-icon md-search__icon" for="__search"></label>
+      <button type="reset" class="md-icon md-search__icon" data-md-component="reset" tabindex="-1">
+        &#xE5CD;
+      </button>
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="result">
+          <div class="md-search-result__meta">
+            検索キーワードを入力してください
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+          
+        
+      </div>
+      
+    </div>
+  </nav>
+</header>
+    
+    <div class="md-container">
+      
+        
+      
+      
+        
+
+  
+
+<nav class="md-tabs md-tabs--active" data-md-component="tabs">
+  <div class="md-tabs__inner md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  <li class="md-tabs__item">
+    
+      <a href="../.." title="Home" class="md-tabs__link">
+        Home
+      </a>
+    
+  </li>
+
+      
+        
+  
+  
+    <li class="md-tabs__item">
+      
+        <a href="../../etc/memo/" title="Etc" class="md-tabs__link">
+          Etc
+        </a>
+      
+    </li>
+  
+
+      
+        
+  
+  
+    <li class="md-tabs__item">
+      
+        <a href="../../環境構築/Docker_Vue.js/" title="環境構築" class="md-tabs__link">
+          環境構築
+        </a>
+      
+    </li>
+  
+
+      
+        
+  
+  
+    <li class="md-tabs__item">
+      
+        <a href="./" title="用語集" class="md-tabs__link md-tabs__link--active">
+          用語集
+        </a>
+      
+    </li>
+  
+
+      
+    </ul>
+  </div>
+</nav>
+      
+      <main class="md-main">
+        <div class="md-main__inner md-grid" data-md-component="container">
+          
+            
+              <div class="md-sidebar md-sidebar--primary" data-md-component="navigation">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    <nav class="md-nav md-nav--primary" data-md-level="0">
+  <label class="md-nav__title md-nav__title--site" for="__drawer">
+    <a href="../.." title="Tani Memo" class="md-nav__button md-logo">
+      
+        <i class="md-icon"></i>
+      
+    </a>
+    Tani Memo
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../.." title="Home" class="md-nav__link">
+      Home
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-2" type="checkbox" id="nav-2">
+    
+    <label class="md-nav__link" for="nav-2">
+      Etc
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-2">
+        Etc
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../etc/memo/" title="〜研修MEMO〜" class="md-nav__link">
+      〜研修MEMO〜
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-3" type="checkbox" id="nav-3">
+    
+    <label class="md-nav__link" for="nav-3">
+      環境構築
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-3">
+        環境構築
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../環境構築/Docker_Vue.js/" title="〜DockerでVue.js環境を整える〜" class="md-nav__link">
+      〜DockerでVue.js環境を整える〜
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../環境構築/GraphQL/" title="〜GraphQLで表示させる〜" class="md-nav__link">
+      〜GraphQLで表示させる〜
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../環境構築/Rspec/" title="〜Rspec〜" class="md-nav__link">
+      〜Rspec〜
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-4" type="checkbox" id="nav-4" checked>
+    
+    <label class="md-nav__link" for="nav-4">
+      用語集
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-4">
+        用語集
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active">
+    
+    <input class="md-toggle md-nav__toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+    
+      
+    
+    
+      <label class="md-nav__link md-nav__link--active" for="__toc">
+        Docker
+      </label>
+    
+    <a href="./" title="Docker" class="md-nav__link md-nav__link--active">
+      Docker
+    </a>
+    
+      
+<nav class="md-nav md-nav--secondary">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">目次</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#docker_1" title="■ Dockerとは" class="md-nav__link">
+    ■ Dockerとは
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_1" title="■ 仮想化とは" class="md-nav__link">
+    ■ 仮想化とは
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_2" title="■ 仮想化の種類" class="md-nav__link">
+    ■ 仮想化の種類
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_3" title="■ 他の仮想化と比べる" class="md-nav__link">
+    ■ 他の仮想化と比べる
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#docker-hub" title="■ Docker HUBとは" class="md-nav__link">
+    ■ Docker HUBとは
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_4" title="■ 参考サイト" class="md-nav__link">
+    ■ 参考サイト
+  </a>
+  
+</li>
+      
+      
+      
+      
+      
+    </ul>
+  
+</nav>
+    
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="toc">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+<nav class="md-nav md-nav--secondary">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">目次</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#docker_1" title="■ Dockerとは" class="md-nav__link">
+    ■ Dockerとは
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_1" title="■ 仮想化とは" class="md-nav__link">
+    ■ 仮想化とは
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_2" title="■ 仮想化の種類" class="md-nav__link">
+    ■ 仮想化の種類
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_3" title="■ 他の仮想化と比べる" class="md-nav__link">
+    ■ 他の仮想化と比べる
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#docker-hub" title="■ Docker HUBとは" class="md-nav__link">
+    ■ Docker HUBとは
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_4" title="■ 参考サイト" class="md-nav__link">
+    ■ 参考サイト
+  </a>
+  
+</li>
+      
+      
+      
+      
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content">
+            <article class="md-content__inner md-typeset">
+              
+                
+                
+                <h1 id="docker">Docker<a class="headerlink" href="#docker" title="Permanent link">&para;</a></h1>
+<h2 id="docker_1">■ Dockerとは<a class="headerlink" href="#docker_1" title="Permanent link">&para;</a></h2>
+<p>Linuxのコンテナ技術を使った、コンテナ仮想化ツール。<br />
+アプリ操作をコンテナ毎に分けて実行したり、別のOS上にコンテナを移しても動作するよう働く。<br />
+コンテナはホストマシンのカーネルを利用し、プロセスやユーザなどを隔離することで、あたかも別のマシンが動いているかのように動かすことができる。<br />
+そのため、軽量で高速に起動、停止などが可能。  </p>
+<h2 id="_1">■ 仮想化とは<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h2>
+<p>1台のPCで複数のOSを同時に動かすことができる技術のこと。  </p>
+<h2 id="_2">■ 仮想化の種類<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h2>
+<p><strong>1、ホスト型（VMware Player、Oracle VM VirtualBoxなど）</strong><br />
+ユーザー向けの仮想化。 <br />
+仮想化をアプリケーションとして利用するタイプの事。<br />
+専用のソフトウェアの上で別のOSを動かすもの。<br />
+既存のOS上で別のOSを動かす。<br />
+Linuxの専用端末が用意できない時や、別のOSを動かしたい時などに利用する。  </p>
+<p><strong>2、ハイパーバイザ型（VMware ESXi、Windows Hyper-V、Xen、KVMなど）</strong><br />
+サーバ向けの仮想化。<br />
+OSそのものに仮想化システムを組み込む。<br />
+仕組みはホスト型と同じようなもの。<br />
+PCの大元のOSにハイパーバイザー専用のOSを入れたり、専用のパッケージを導入する事で、そのOSをの上で仮想マシンを作成できるようする。  </p>
+<p><strong>3、コンテナ型（Docker）</strong><br />
+コンテナ型仮想化。<br />
+軽量さが売り。<br />
+ホスト型やハイパーバイザー型と違い、ホストのカーネルを直接使用するため、オーバーヘッドが小さくなる。  </p>
+<h2 id="_3">■ 他の仮想化と比べる<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h2>
+<table>
+<thead>
+<tr>
+<th align="left"></th>
+<th align="left">コンテナ型</th>
+<th align="left">ハイパーバイザー型</th>
+<th align="left">ホスト型</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left">主なブランド</td>
+<td align="left">Docker</td>
+<td align="left">KVM</td>
+<td align="left">Vmware / Virtual Box</td>
+</tr>
+<tr>
+<td align="left">起動速度</td>
+<td align="left">早い(秒速)</td>
+<td align="left">比較的遅い(分速)</td>
+<td align="left">比較的遅い(分速)</td>
+</tr>
+<tr>
+<td align="left">移動のしやすさ</td>
+<td align="left">◎</td>
+<td align="left">△</td>
+<td align="left">△</td>
+</tr>
+<tr>
+<td align="left">専用プログラムサイズ</td>
+<td align="left">小</td>
+<td align="left">比較的大</td>
+<td align="left">比較的大</td>
+</tr>
+<tr>
+<td align="left">仮想マシンに利用可能なOS</td>
+<td align="left">選択できない(共通OS上で動作しているため)</td>
+<td align="left">何でも可能</td>
+<td align="left">何でも可能</td>
+</tr>
+<tr>
+<td align="left">セキュリティ</td>
+<td align="left">△(共通OS上で動作しているため)</td>
+<td align="left">比較的〇</td>
+<td align="left">比較的〇</td>
+</tr>
+</tbody>
+</table>
+<h2 id="docker-hub">■ Docker HUBとは<a class="headerlink" href="#docker-hub" title="Permanent link">&para;</a></h2>
+<p>ユーザーが作成したコンテナをアップロードして公開・共有できるサービス。<br />
+ここで公開されているコンテナは自由にダウンロードして自分のサーバーに簡単にデプロイできる。<br />
+公開されているコンテナは「リポジトリ」という単位で管理され、タグを使ったバージョン管理も可能。  </p>
+<h2 id="_4">■ 参考サイト<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h2>
+<p>● <a href="https://www.slideshare.net/zembutsu/docker-images-containers-and-lifecycle">Dockerイメージの理解とコンテナのライフサイクル</a><br />
+● <a href="http://www.atmarkit.co.jp/ait/articles/1405/16/news032.html">アプリ開発者もインフラ管理者も知っておきたいDockerの基礎知識：いまさら聞けないDocker入門（1） - ＠IT</a><br />
+● <a href="https://tech.nikkeibp.co.jp/it/atcl/column/14/111400098/111400001/">軽い！新たな仮想化を実現する「Docker」（前編） | 日経 xTECH（クロステック）</a>  </p>
+                
+                  
+                
+              
+              
+                
+
+
+              
+            </article>
+          </div>
+        </div>
+      </main>
+      
+        
+<footer class="md-footer">
+  
+    <div class="md-footer-nav">
+      <nav class="md-footer-nav__inner md-grid">
+        
+          <a href="../../環境構築/Rspec/" title="〜Rspec〜" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+            <div class="md-flex__cell md-flex__cell--shrink">
+              <i class="md-icon md-icon--arrow-back md-footer-nav__button"></i>
+            </div>
+            <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
+              <span class="md-flex__ellipsis">
+                <span class="md-footer-nav__direction">
+                  前
+                </span>
+                〜Rspec〜
+              </span>
+            </div>
+          </a>
+        
+        
+      </nav>
+    </div>
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-footer-copyright">
+        
+        powered by
+        <a href="https://www.mkdocs.org">MkDocs</a>
+        and
+        <a href="https://squidfunk.github.io/mkdocs-material/">
+          Material for MkDocs</a>
+      </div>
+      
+        
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    
+      <script src="../../assets/javascripts/application.583bbe55.js"></script>
+      
+        
+        
+          
+          <script src="../../assets/javascripts/lunr/lunr.stemmer.support.js"></script>
+          
+            
+              
+                <script src="../../assets/javascripts/lunr/tinyseg.js"></script>
+              
+              
+                <script src="../../assets/javascripts/lunr/lunr.jp.js"></script>
+              
+            
+          
+          
+        
+      
+      <script>app.initialize({version:"1.0.3",url:{base:"../.."}})</script>
+      
+    
+    
+      
+    
+  </body>
+</html>
