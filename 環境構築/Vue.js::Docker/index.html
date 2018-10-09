@@ -269,8 +269,20 @@
 
 
   <li class="md-nav__item">
-    <a href="../Rspec::Docker/" title="Rspec::RSpec" class="md-nav__link">
-      Rspec::RSpec
+    <a href="../RSpec::Ruby_on_Rails/" title="RSpec::Ruby on Rails" class="md-nav__link">
+      RSpec::Ruby on Rails
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../Ruby_on_Rails::Docker/" title="Ruby on Rails::Docker" class="md-nav__link">
+      Ruby on Rails::Docker
     </a>
   </li>
 
@@ -766,38 +778,38 @@
 29
 30
 31
-32</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>FROM ruby:2.5.1  
+32</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="k">FROM</span><span class="s"> ruby:2.5.1  </span>
 
-ENV LANG C.UTF-8  
+<span class="k">ENV</span><span class="s"> LANG C.UTF-8  </span>
 
-# for MySQL  
-# 必要なライブラリインストール  
-RUN apt-get update -qq &amp;&amp; apt-get install -y   build-essential libpq-dev mysql-client  
+<span class="c"># for MySQL  </span>
+<span class="c"># 必要なライブラリインストール  </span>
+<span class="k">RUN</span> apt-get update -qq <span class="o">&amp;&amp;</span> apt-get install -y   build-essential libpq-dev mysql-client  
 
-# yarnパッケージ管理ツールインストール
-RUN apt-get install -y curl apt-transport-https wget &amp;&amp; \  
-    curl -sS https://dl.yarnpkg.com/debian/pubkey.gpg | apt-key add - &amp;&amp; \  
-    echo &quot;deb https://dl.yarnpkg.com/debian/ stable main&quot; | tee /etc/apt/sources.list.d/yarn.list &amp;&amp; \  
-    apt-get update &amp;&amp; apt-get install -y yarn  
+<span class="c"># yarnパッケージ管理ツールインストール</span>
+<span class="k">RUN</span> apt-get install -y curl apt-transport-https wget <span class="o">&amp;&amp;</span> <span class="se">\ </span> 
+    curl -sS https://dl.yarnpkg.com/debian/pubkey.gpg <span class="p">|</span> apt-key add - <span class="o">&amp;&amp;</span> <span class="se">\ </span> 
+    <span class="nb">echo</span> <span class="s2">&quot;deb https://dl.yarnpkg.com/debian/ stable main&quot;</span> <span class="p">|</span> tee /etc/apt/sources.list.d/yarn.list <span class="o">&amp;&amp;</span> <span class="se">\ </span> 
+    apt-get update <span class="o">&amp;&amp;</span> apt-get install -y yarn  
 
-# Node.jsをインストール
-RUN curl -sL https://deb.nodesource.com/setup_8.x | bash - &amp;&amp; \  
+<span class="c"># Node.jsをインストール</span>
+<span class="k">RUN</span> curl -sL https://deb.nodesource.com/setup_8.x <span class="p">|</span> bash - <span class="o">&amp;&amp;</span> <span class="se">\ </span> 
     apt-get install nodejs  
 
-# Cannot find module node-sass対策  
-RUN yarn add node-sass  
+<span class="c"># Cannot find module node-sass対策  </span>
+<span class="k">RUN</span> yarn add node-sass  
 
-RUN gem install bundler  
+<span class="k">RUN</span> gem install bundler  
 
-WORKDIR /tmp
-ADD Gemfile Gemfile
-ADD Gemfile.lock Gemfile.lock
-RUN bundle install
+<span class="k">WORKDIR</span><span class="s"> /tmp</span>
+<span class="k">ADD</span><span class="s"> Gemfile Gemfile</span>
+<span class="k">ADD</span><span class="s"> Gemfile.lock Gemfile.lock</span>
+<span class="k">RUN</span> bundle install
 
-ENV APP_HOME /myapp
-RUN mkdir -p $APP_HOME
-WORKDIR $APP_HOME
-ADD . $APP_HOME
+<span class="k">ENV</span><span class="s"> APP_HOME /myapp</span>
+<span class="k">RUN</span> mkdir -p <span class="nv">$APP_HOME</span>
+<span class="k">WORKDIR</span><span class="s"> $APP_HOME</span>
+<span class="k">ADD</span><span class="s"> . $APP_HOME</span>
 </pre></div>
 </td></tr></table>
 
@@ -829,12 +841,12 @@ ADD . $APP_HOME
 24
 25
 26
-27</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>version: &#39;2&#39;
+27</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>version: <span class="s1">&#39;2&#39;</span>
 services:
   db:
     image: mysql:5.7.17
     ports:
-      - &quot;3306:3306&quot;
+      - <span class="s2">&quot;3306:3306&quot;</span>
     volumes:
       - ./docker/mysql/volumes:/var/lib/mysql  
     extends:
@@ -844,9 +856,9 @@ services:
     build:
       context: .
       dockerfile: ./docker/rails/Dockerfile
-    command: bundle exec rails s -p 3000 -b &#39;0.0.0.0&#39;
+    command: bundle <span class="nb">exec</span> rails s -p <span class="m">3000</span> -b <span class="s1">&#39;0.0.0.0&#39;</span>
     ports:
-      - &quot;3000:3000&quot;
+      - <span class="s2">&quot;3000:3000&quot;</span>
     volumes:
       - .:/myapp
     environment:
@@ -865,7 +877,7 @@ services:
 2
 3
 4
-5</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>version: &#39;2&#39;
+5</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>version: <span class="s1">&#39;2&#39;</span>
 services:
   password:
     environment:
@@ -912,21 +924,21 @@ $ docker-compose build
 12
 13
 14
-15</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="x">default: &amp;default</span>
-<span class="x">  adapter: mysql2</span>
-<span class="x">  encoding: utf8</span>
-<span class="x">  pool: </span><span class="cp">&lt;%=</span> <span class="no">ENV</span><span class="o">.</span><span class="n">fetch</span><span class="p">(</span><span class="s2">&quot;RAILS_MAX_THREADS&quot;</span><span class="p">)</span> <span class="p">{</span> <span class="mi">5</span> <span class="p">}</span> <span class="cp">%&gt;</span><span class="x"></span>
-<span class="x">  username: root</span>
-<span class="x">  password: </span><span class="cp">&lt;%=</span> <span class="no">ENV</span><span class="o">[</span><span class="s1">&#39;MYSQL_ROOT_PASSWORD&#39;</span><span class="o">]</span> <span class="cp">%&gt;</span><span class="x"></span>
-<span class="x">  host: db  </span>
+15</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>default: <span class="p">&amp;</span>default
+  adapter: mysql2
+  encoding: utf8
+  pool: &lt;%<span class="o">=</span> ENV.fetch<span class="o">(</span><span class="s2">&quot;RAILS_MAX_THREADS&quot;</span><span class="o">)</span> <span class="o">{</span> <span class="m">5</span> <span class="o">}</span> %&gt;
+  username: root
+  password: &lt;%<span class="o">=</span> ENV<span class="o">[</span><span class="s1">&#39;MYSQL_ROOT_PASSWORD&#39;</span><span class="o">]</span> %&gt;
+  host: db  
 
-<span class="x">development:</span>
-<span class="x">  &lt;&lt;: *default</span>
-<span class="x">  database: myapp_development</span>
+development:
+  &lt;&lt;: *default
+  database: myapp_development
 
-<span class="x">test:</span>
-<span class="x">  &lt;&lt;: *default</span>
-<span class="x">  database: myapp_test</span>
+test:
+  &lt;&lt;: *default
+  database: myapp_test
 </pre></div>
 </td></tr></table>
 
@@ -942,17 +954,17 @@ $ docker <span class="nb">exec</span> -it &lt;コンテナID&gt; bash
 <hr />
 <h2 id="rails">■　Railsの設定<a class="headerlink" href="#rails" title="Permanent link">&para;</a></h2>
 <h3 id="1_1">1、コントローラーを作成<a class="headerlink" href="#1_1" title="Permanent link">&para;</a></h3>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span># rails g controller home index
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="c1"># rails g controller home index</span>
 </pre></div>
 </td></tr></table>
 
 <h3 id="2_1">2、ルートを設定<a class="headerlink" href="#2_1" title="Permanent link">&para;</a></h3>
-<p>config/routes.rb</p>
+<p>./config/routes.rb</p>
 <table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1
 2
 3
 4</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>Rails.application.routes.draw do  
-+ root to: &#39;home#index&#39;
+  root to: &#39;home#index&#39;       #追記
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end
 </pre></div>
@@ -960,7 +972,7 @@ end
 
 <h3 id="3view">3,Viewを空にする<a class="headerlink" href="#3view" title="Permanent link">&para;</a></h3>
 <p>app/views/home/index.html.erb</p>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>空ファイル
 </pre></div>
 </td></tr></table>
 
@@ -984,15 +996,15 @@ end
 <span class="p">&lt;</span><span class="nt">html</span><span class="p">&gt;</span>
   <span class="p">&lt;</span><span class="nt">head</span><span class="p">&gt;</span>
     <span class="p">&lt;</span><span class="nt">title</span><span class="p">&gt;</span>RailsVueSandbox<span class="p">&lt;/</span><span class="nt">title</span><span class="p">&gt;</span>
-    <span class="cp">&lt;%=</span> <span class="n">csrf_meta_tags</span> <span class="cp">%&gt;</span>
+    <span class="err">&lt;</span>%= csrf_meta_tags %&gt;
 
-    <span class="cp">&lt;%=</span> <span class="n">stylesheet_link_tag</span>    <span class="s1">&#39;application&#39;</span><span class="p">,</span> <span class="ss">media</span><span class="p">:</span> <span class="s1">&#39;all&#39;</span><span class="p">,</span> <span class="s1">&#39;data-turbolinks-track&#39;</span><span class="p">:</span> <span class="s1">&#39;reload&#39;</span> <span class="cp">%&gt;</span>
-    <span class="cp">&lt;%=</span> <span class="n">javascript_include_tag</span> <span class="s1">&#39;application&#39;</span><span class="p">,</span> <span class="s1">&#39;data-turbolinks-track&#39;</span><span class="p">:</span> <span class="s1">&#39;reload&#39;</span> <span class="cp">%&gt;</span>
+    <span class="err">&lt;</span>%= stylesheet_link_tag    &#39;application&#39;, media: &#39;all&#39;, &#39;data-turbolinks-track&#39;: &#39;reload&#39; %&gt;
+    <span class="err">&lt;</span>%= javascript_include_tag &#39;application&#39;, &#39;data-turbolinks-track&#39;: &#39;reload&#39; %&gt;
   <span class="p">&lt;/</span><span class="nt">head</span><span class="p">&gt;</span>
 
   <span class="p">&lt;</span><span class="nt">body</span><span class="p">&gt;</span>
-    <span class="cp">&lt;%=</span> <span class="k">yield</span> <span class="cp">%&gt;</span>
-+    <span class="cp">&lt;%=</span> <span class="n">javascript_pack_tag</span> <span class="s1">&#39;hello_vue&#39;</span> <span class="cp">%&gt;</span>
+    <span class="err">&lt;</span>%= yield %&gt;
+    <span class="err">&lt;</span>%= javascript_pack_tag &#39;hello_vue&#39; %&gt;        #追記
   <span class="p">&lt;/</span><span class="nt">body</span><span class="p">&gt;</span>
 <span class="p">&lt;/</span><span class="nt">html</span><span class="p">&gt;</span>
 </pre></div>
@@ -1025,7 +1037,7 @@ end
     <div class="md-footer-nav">
       <nav class="md-footer-nav__inner md-grid">
         
-          <a href="../Rspec::Docker/" title="Rspec::RSpec" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+          <a href="../Ruby_on_Rails::Docker/" title="Ruby on Rails::Docker" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
             <div class="md-flex__cell md-flex__cell--shrink">
               <i class="md-icon md-icon--arrow-back md-footer-nav__button"></i>
             </div>
@@ -1034,7 +1046,7 @@ end
                 <span class="md-footer-nav__direction">
                   前
                 </span>
-                Rspec::RSpec
+                Ruby on Rails::Docker
               </span>
             </div>
           </a>

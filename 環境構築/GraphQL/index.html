@@ -389,8 +389,8 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#5graphqlcontoroller" title="5、GraphqlContorollerに下記を追加" class="md-nav__link">
-    5、GraphqlContorollerに下記を追加
+  <a href="#5graphqlcontoroller" title="5、GraphqlContorollerを確認" class="md-nav__link">
+    5、GraphqlContorollerを確認
   </a>
   
 </li>
@@ -398,6 +398,13 @@
           <li class="md-nav__item">
   <a href="#6_1" title="6、クエリを投げる" class="md-nav__link">
     6、クエリを投げる
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#7_1" title="7、結果" class="md-nav__link">
+    7、結果
   </a>
   
 </li>
@@ -424,8 +431,8 @@
 
 
   <li class="md-nav__item">
-    <a href="../Rspec::Docker/" title="Rspec::RSpec" class="md-nav__link">
-      Rspec::RSpec
+    <a href="../RSpec::Ruby_on_Rails/" title="RSpec::Ruby on Rails" class="md-nav__link">
+      RSpec::Ruby on Rails
     </a>
   </li>
 
@@ -436,7 +443,19 @@
 
 
   <li class="md-nav__item">
-    <a href="../Vue::Docker.js/" title="Vue.js::Docker" class="md-nav__link">
+    <a href="../Ruby_on_Rails::Docker/" title="Ruby on Rails::Docker" class="md-nav__link">
+      Ruby on Rails::Docker
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../Vue.js::Docker/" title="Vue.js::Docker" class="md-nav__link">
       Vue.js::Docker
     </a>
   </li>
@@ -633,8 +652,8 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#5graphqlcontoroller" title="5、GraphqlContorollerに下記を追加" class="md-nav__link">
-    5、GraphqlContorollerに下記を追加
+  <a href="#5graphqlcontoroller" title="5、GraphqlContorollerを確認" class="md-nav__link">
+    5、GraphqlContorollerを確認
   </a>
   
 </li>
@@ -642,6 +661,13 @@
           <li class="md-nav__item">
   <a href="#6_1" title="6、クエリを投げる" class="md-nav__link">
     6、クエリを投げる
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#7_1" title="7、結果" class="md-nav__link">
+    7、結果
   </a>
   
 </li>
@@ -718,11 +744,11 @@
 5
 6
 7</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>Rails.application.routes.draw do
-+  if Rails.env.development?
-+    mount GraphiQL::Rails::Engine, at: &quot;/graphiql&quot;, graphql_path: &quot;/graphql&quot;
-+  end
+  if Rails.env.development?                                                         #追記
+    mount GraphiQL::Rails::Engine, at: &quot;/graphiql&quot;, graphql_path: &quot;/graphql&quot;        #追記
+  end                                                                               #追記
 
-+  post &quot;/graphql&quot;, to: &quot;graphql#execute&quot;
+  post &quot;/graphql&quot;, to: &quot;graphql#execute&quot;                                            #追記
 end
 </pre></div>
 </td></tr></table>
@@ -749,7 +775,7 @@ $ rails db:migrate
 </td></tr></table>
 
 <h3 id="2graphql">2、GraphQLオブジェクトを作成<a class="headerlink" href="#2graphql" title="Permanent link">&para;</a></h3>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>$ rails g graphql:object User id:ID! name:String! email:String!
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>$ rails g graphql:object Task id:ID! title:String! contet:String!
 </pre></div>
 </td></tr></table>
 
@@ -761,39 +787,43 @@ $ rails db:migrate
 4
 5
 6
-7</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>Types::UserType = GraphQL::ObjectType.define do
-  name &#39;User&#39;
+7
+8</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>Types::TaskType = GraphQL::ObjectType.define do
+  name &#39;Task&#39;
 
   field :id, !types.ID
-  field :name, !types.String
-  field :email, !types.String
+  field :title, !types.String
+  field :content, types.String
+  field :lane_id, types.String
 end
 </pre></div>
 </td></tr></table>
 
 <h3 id="4query">4、Queryと紐付け<a class="headerlink" href="#4query" title="Permanent link">&para;</a></h3>
 <p>・app/graphql/types/query_type.rb  </p>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1
-2
-3
-4
-5
-6
-7
-8
-9</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>Types::QueryType = GraphQL::ObjectType.define do
-  name &#39;Query&#39;
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>Types::QueryType = GraphQL::ObjectType.define do
+name &#39;Query&#39;
 
-  field :user, !Types::UserType do
-    resolve -&gt;(_obj, _args, ctx) {
-      ctx[:current_user]
+  field :tasks do
+    type types[Types::TaskType]
+    resolve -&gt; (obj, args, ctx)  {
+      Task.all
     }
   end
 end
 </pre></div>
 </td></tr></table>
 
-<h3 id="5graphqlcontoroller">5、GraphqlContorollerに下記を追加<a class="headerlink" href="#5graphqlcontoroller" title="Permanent link">&para;</a></h3>
+<h3 id="5graphqlcontoroller">5、GraphqlContorollerを確認<a class="headerlink" href="#5graphqlcontoroller" title="Permanent link">&para;</a></h3>
 <p>・app/controllers/graphql_Controller</p>
 <table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
  2
@@ -806,14 +836,12 @@ end
  9
 10
 11
-12
-13</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="kr">class</span> <span class="nx">GraphqlController</span> <span class="o">&lt;</span> <span class="nx">ApplicationController</span>
+12</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="kr">class</span> <span class="nx">GraphqlController</span> <span class="o">&lt;</span> <span class="nx">ApplicationController</span>
   <span class="nx">def</span> <span class="nx">execute</span>
     <span class="nx">variables</span> <span class="o">=</span> <span class="nx">ensure_hash</span><span class="p">(</span><span class="nx">params</span><span class="p">[</span><span class="o">:</span><span class="nx">variables</span><span class="p">])</span>
     <span class="nx">query</span> <span class="o">=</span> <span class="nx">params</span><span class="p">[</span><span class="o">:</span><span class="nx">query</span><span class="p">]</span>
     <span class="nx">operation_name</span> <span class="o">=</span> <span class="nx">params</span><span class="p">[</span><span class="o">:</span><span class="nx">operationName</span><span class="p">]</span>
     <span class="nx">context</span> <span class="o">=</span> <span class="p">{</span>
-<span class="o">+</span>      <span class="nx">current_user</span>: <span class="kt">User.last</span><span class="p">,</span>  <span class="err">#</span> <span class="err">ここで</span><span class="nx">current_userを指定する</span>
     <span class="p">}</span>
     <span class="nx">result</span> <span class="o">=</span> <span class="nx">GraphqlRubyDemoSchema</span><span class="p">.</span><span class="nx">execute</span><span class="p">(</span><span class="nx">query</span><span class="p">,</span> <span class="nx">variables</span>: <span class="kt">variables</span><span class="p">,</span> <span class="nx">context</span>: <span class="kt">context</span><span class="p">,</span> <span class="nx">operation_name</span>: <span class="kt">operation_name</span><span class="p">)</span>
     <span class="nx">render</span> <span class="nx">json</span>: <span class="kt">result</span>
@@ -829,12 +857,49 @@ end
 3
 4
 5
-6
-7</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>{
-  user {
+6</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>{
+  tasks {
     id
-    name
-    email
+    title
+  }
+}
+</pre></div>
+</td></tr></table>
+
+<h3 id="7_1">7、結果<a class="headerlink" href="#7_1" title="Permanent link">&para;</a></h3>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12
+13
+14
+15
+16
+17
+18</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>{
+  &quot;data&quot;: {
+    &quot;tasks&quot;: [
+      {
+        &quot;id&quot;: &quot;1&quot;,
+        &quot;title&quot;: &quot;task01&quot;
+      },
+      {
+        &quot;id&quot;: &quot;2&quot;,
+        &quot;title&quot;: &quot;task02&quot;
+      },
+      {
+        &quot;id&quot;: &quot;3&quot;,
+        &quot;title&quot;: &quot;task03&quot;
+      }
+    ]
   }
 }
 </pre></div>
@@ -874,13 +939,13 @@ end
           </a>
         
         
-          <a href="../Rspec::Docker/" title="Rspec::RSpec" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
+          <a href="../RSpec::Ruby_on_Rails/" title="RSpec::Ruby on Rails" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
             <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
               <span class="md-flex__ellipsis">
                 <span class="md-footer-nav__direction">
                   次
                 </span>
-                Rspec::RSpec
+                RSpec::Ruby on Rails
               </span>
             </div>
             <div class="md-flex__cell md-flex__cell--shrink">
