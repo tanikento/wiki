@@ -349,8 +349,29 @@
     <ul class="md-nav__list" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#_1" title="■ 環境は下記を参照" class="md-nav__link">
-    ■ 環境は下記を参照
+  <a href="#1" title="1、 環境" class="md-nav__link">
+    1、 環境
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2bootstrap-vue" title="2、bootstrap-vueをインストール" class="md-nav__link">
+    2、bootstrap-vueをインストール
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3mainjs" title="3、下記をmain.jsに書き込む" class="md-nav__link">
+    3、下記をmain.jsに書き込む
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4" title="4、表示確認" class="md-nav__link">
+    4、表示確認
   </a>
   
 </li>
@@ -372,7 +393,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../GraphQL/" title="GraphQL" class="md-nav__link">
+    <a href="../graphql/" title="GraphQL" class="md-nav__link">
       GraphQL
     </a>
   </li>
@@ -384,19 +405,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../RSpec_Rails/" title="RSpec_Rails" class="md-nav__link">
-      RSpec_Rails
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../Rails_Docker/" title="Rails_Docker" class="md-nav__link">
+    <a href="../rails_docker/" title="Rails_Docker" class="md-nav__link">
       Rails_Docker
     </a>
   </li>
@@ -408,7 +417,31 @@
 
 
   <li class="md-nav__item">
-    <a href="../Vue.js_Rails_Docker/" title="Vue.js_Rails_Docker" class="md-nav__link">
+    <a href="../rspec_rails/" title="RSpec_Rails" class="md-nav__link">
+      RSpec_Rails
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../vue.draggable_vue.js/" title="Vue.Draggable_Vue.js" class="md-nav__link">
+      Vue.Draggable_Vue.js
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../vue.js_rails_Docker/" title="Vue.js_Rails_Docker" class="md-nav__link">
       Vue.js_Rails_Docker
     </a>
   </li>
@@ -512,8 +545,29 @@
     <ul class="md-nav__list" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#_1" title="■ 環境は下記を参照" class="md-nav__link">
-    ■ 環境は下記を参照
+  <a href="#1" title="1、 環境" class="md-nav__link">
+    1、 環境
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2bootstrap-vue" title="2、bootstrap-vueをインストール" class="md-nav__link">
+    2、bootstrap-vueをインストール
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3mainjs" title="3、下記をmain.jsに書き込む" class="md-nav__link">
+    3、下記をmain.jsに書き込む
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4" title="4、表示確認" class="md-nav__link">
+    4、表示確認
   </a>
   
 </li>
@@ -534,14 +588,34 @@
             <article class="md-content__inner md-typeset">
               
                 
-                  <a href="https://github.com/tanikento/wiki/edit/master/docs/環境構築/Bootstrap_Vue.js.md" title="編集" class="md-icon md-content__icon">&#xE3C9;</a>
+                  <a href="https://github.com/tanikento/wiki/edit/master/docs/環境構築/bootstrap_vue.js.md" title="編集" class="md-icon md-content__icon">&#xE3C9;</a>
                 
                 
                 <h1 id="bootstrap_vuejs">Bootstrap_Vue.js<a class="headerlink" href="#bootstrap_vuejs" title="Permanent link">&para;</a></h1>
-<h2 id="_1">■ 環境は下記を参照<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h2>
-<ul>
-<li><a href="https://tanikento.github.io/wiki/環境構築/Vue.js_Rails_Docker/">Vue.js_Rails_Docker</a></li>
-</ul>
+<h2 id="1">1、 環境<a class="headerlink" href="#1" title="Permanent link">&para;</a></h2>
+<p>下記を参照
+* <a href="https://tanikento.github.io/wiki/環境構築/Vue.js_Rails_Docker/">Vue.js_Rails_Docker</a></p>
+<h2 id="2bootstrap-vue">2、bootstrap-vueをインストール<a class="headerlink" href="#2bootstrap-vue" title="Permanent link">&para;</a></h2>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>npm install --save bootstrap-vue
+</pre></div>
+</td></tr></table>
+
+<h2 id="3mainjs">3、下記を<code>main.js</code>に書き込む<a class="headerlink" href="#3mainjs" title="Permanent link">&para;</a></h2>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2
+3
+4</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="kr">import</span> <span class="s1">&#39;bootstrap/dist/css/bootstrap.css&#39;</span>
+<span class="kr">import</span> <span class="s1">&#39;bootstrap-vue/dist/bootstrap-vue.css&#39;</span>
+<span class="kr">import</span> <span class="nx">BootstrapVue</span> <span class="nx">from</span> <span class="s1">&#39;bootstrap-vue&#39;</span>
+<span class="nx">Vue</span><span class="p">.</span><span class="nx">use</span><span class="p">(</span><span class="nx">BootstrapVue</span><span class="p">)</span>
+</pre></div>
+</td></tr></table>
+
+<h2 id="4">4、表示確認<a class="headerlink" href="#4" title="Permanent link">&para;</a></h2>
+<p><code>App.vue</code>などで表示確認（タグで指定するだけ！）</p>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="nt">&lt;button</span> <span class="na">type=</span><span class="s">&quot;button&quot;</span> <span class="na">class=</span><span class="s">&quot;btn btn-primary&quot;</span> <span class="na">v-on:click=</span><span class="s">&quot;add&quot;</span><span class="nt">&gt;</span> Add <span class="nt">&lt;/button&gt;</span>
+</pre></div>
+</td></tr></table>
                 
                   
                 
@@ -577,7 +651,7 @@
           </a>
         
         
-          <a href="../GraphQL/" title="GraphQL" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
+          <a href="../graphql/" title="GraphQL" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
             <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
               <span class="md-flex__ellipsis">
                 <span class="md-footer-nav__direction">
