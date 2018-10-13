@@ -62,6 +62,12 @@
     
     <link rel="stylesheet" href="../../assets/fonts/material-icons.css">
     
+      <link rel="stylesheet" href="//fonts.googleapis.com/earlyaccess/notosansjp.css">
+    
+      <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Open+Sans:600,800">
+    
+      <link rel="stylesheet" href="../../css/custom.css">
+    
     
   </head>
   
@@ -215,13 +221,19 @@
         
   
   
+    
+    
+  
+  
     <li class="md-tabs__item">
       
-        <a href="../../環境構築/bootstrap_vue.js/" title="環境構築" class="md-tabs__link">
+        <a href="../../環境構築/Docker/mkdocs_docker/" title="環境構築" class="md-tabs__link">
           環境構築
         </a>
       
     </li>
+  
+
   
 
       
@@ -319,9 +331,28 @@
           
 
 
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-2-1" type="checkbox" id="nav-2-1">
+    
+    <label class="md-nav__link" for="nav-2-1">
+      Docker
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="2">
+      <label class="md-nav__title" for="nav-2-1">
+        Docker
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
   <li class="md-nav__item">
-    <a href="../../環境構築/bootstrap_vue.js/" title="Bootstrap_Vue.js" class="md-nav__link">
-      Bootstrap_Vue.js
+    <a href="../../環境構築/Docker/mkdocs_docker/" title="MkDocs / Docker" class="md-nav__link">
+      MkDocs / Docker
     </a>
   </li>
 
@@ -332,8 +363,8 @@
 
 
   <li class="md-nav__item">
-    <a href="../../環境構築/graphql/" title="GraphQL" class="md-nav__link">
-      GraphQL
+    <a href="../../環境構築/Docker/rails_docker/" title="Ruby on Rails / Docker" class="md-nav__link">
+      Ruby on Rails / Docker
     </a>
   </li>
 
@@ -344,8 +375,44 @@
 
 
   <li class="md-nav__item">
-    <a href="../../環境構築/rails_docker/" title="Rails_Docker" class="md-nav__link">
-      Rails_Docker
+    <a href="../../環境構築/Docker/vue.js_rails_Docker/" title="Vue.js & Ruby on Rails / Docker" class="md-nav__link">
+      Vue.js & Ruby on Rails / Docker
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-2-2" type="checkbox" id="nav-2-2">
+    
+    <label class="md-nav__link" for="nav-2-2">
+      Ruby on Rails
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="2">
+      <label class="md-nav__title" for="nav-2-2">
+        Ruby on Rails
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../環境構築/Ruby on Rails/graphql_rails/" title="GraphQL => Ruby on Rails" class="md-nav__link">
+      GraphQL => Ruby on Rails
     </a>
   </li>
 
@@ -356,8 +423,44 @@
 
 
   <li class="md-nav__item">
-    <a href="../../環境構築/rspec_rails/" title="RSpec_Rails" class="md-nav__link">
-      RSpec_Rails
+    <a href="../../環境構築/Ruby on Rails/rspec_rails/" title="RSpec => Ruby on Rails" class="md-nav__link">
+      RSpec => Ruby on Rails
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-2-3" type="checkbox" id="nav-2-3">
+    
+    <label class="md-nav__link" for="nav-2-3">
+      Vue.js
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="2">
+      <label class="md-nav__title" for="nav-2-3">
+        Vue.js
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../環境構築/Vue.js/bootstrap_vue.js/" title="Bootstrap => Vue.js" class="md-nav__link">
+      Bootstrap => Vue.js
     </a>
   </li>
 
@@ -368,21 +471,14 @@
 
 
   <li class="md-nav__item">
-    <a href="../../環境構築/vue.draggable_vue.js/" title="Vue.Draggable_Vue.js" class="md-nav__link">
-      Vue.Draggable_Vue.js
+    <a href="../../環境構築/Vue.js/vue.draggable_vue.js/" title="Vue.Draggable => Vue.js" class="md-nav__link">
+      Vue.Draggable => Vue.js
     </a>
   </li>
 
         
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../../環境構築/vue.js_rails_Docker/" title="Vue.js_Rails_Docker" class="md-nav__link">
-      Vue.js_Rails_Docker
-    </a>
+      </ul>
+    </nav>
   </li>
 
         
@@ -552,114 +648,103 @@
                 <h1 id="git">Git<a class="headerlink" href="#git" title="Permanent link">&para;</a></h1>
 <h2 id="_1">コマンド集<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h2>
 <ul>
-<li>リポジトリを作成  </li>
-</ul>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>$ git init
+<li>
+<p>リポジトリを作成<br />
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>$ git init
 </pre></div>
-</td></tr></table>
-
-<ul>
-<li>ローカルにクローンする  </li>
-</ul>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>$ git clone &lt;url&gt;
+</td></tr></table></p>
+</li>
+<li>
+<p>ローカルにクローンする<br />
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>$ git clone &lt;url&gt;
 </pre></div>
-</td></tr></table>
-
-<ul>
-<li>インデックスに追加(Git管理の対象にあげる)  </li>
-</ul>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+</td></tr></table></p>
+</li>
+<li>
+<p>インデックスに追加(Git管理の対象にあげる)<br />
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1
 2</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>$ git add &lt;ディレクトリ名やファイル名&gt;  
 <span class="o">(</span>例<span class="o">)</span> <span class="sb">`</span>$ git add <span class="nb">test</span><span class="sb">`</span>、<span class="sb">`</span>$ git add test.md
 </pre></div>
-</td></tr></table>
-
-<ul>
-<li>コミットする  </li>
-</ul>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+</td></tr></table></p>
+</li>
+<li>
+<p>コミットする<br />
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1
 2</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>$ git commit -m &lt;<span class="s2">&quot;コメント&quot;</span>&gt;  
 <span class="o">(</span>例<span class="o">)</span> <span class="sb">`</span>$ git commit -m <span class="s2">&quot;テストです&quot;</span>
 </pre></div>
-</td></tr></table>
-
-<ul>
-<li>addとcommitを同時に行う  </li>
-</ul>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+</td></tr></table></p>
+</li>
+<li>
+<p>addとcommitを同時に行う<br />
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1
 2</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>$ git commit -a &lt;ディレクトリ名やファイル名&gt;  
 <span class="o">(</span>例<span class="o">)</span> <span class="sb">`</span>$ git commit -a <span class="nb">test</span><span class="sb">`</span>、<span class="sb">`</span>$ git commit -a test.md
 </pre></div>
-</td></tr></table>
-
-<ul>
-<li>ローカルのブランチ名を変更(現在いないブランチの場合)  </li>
-</ul>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>$ git branch -m &lt;古いブランチ名&gt; &lt;新しいブランチ名&gt;
+</td></tr></table></p>
+</li>
+<li>
+<p>ローカルのブランチ名を変更(現在いないブランチの場合)<br />
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>$ git branch -m &lt;古いブランチ名&gt; &lt;新しいブランチ名&gt;
 </pre></div>
-</td></tr></table>
-
-<ul>
-<li>ローカルのブランチ名を変更(現在いるブランチの場合)  </li>
-</ul>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>$ git branch -m &lt;新しいブランチ名&gt;
+</td></tr></table></p>
+</li>
+<li>
+<p>ローカルのブランチ名を変更(現在いるブランチの場合)<br />
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>$ git branch -m &lt;新しいブランチ名&gt;
 </pre></div>
-</td></tr></table>
-
-<ul>
-<li>リモートリポジトリの確認  </li>
-</ul>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>$ git remote -v
+</td></tr></table></p>
+</li>
+<li>
+<p>リモートリポジトリの確認<br />
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>$ git remote -v
 </pre></div>
-</td></tr></table>
-
-<ul>
-<li>リモートリポジトリの追加  </li>
-</ul>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+</td></tr></table></p>
+</li>
+<li>
+<p>リモートリポジトリの追加<br />
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1
 2</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>$ git remote add origin &lt;追加したいリポジトリ&gt;  
 <span class="o">(</span>例<span class="o">)</span> <span class="sb">`</span>$ git remote add origin https://github.com/○○○/×××.git
 </pre></div>
-</td></tr></table>
-
-<ul>
-<li>リモートリポジトリの削除  </li>
-</ul>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>$ git remote rm origin
+</td></tr></table></p>
+</li>
+<li>
+<p>リモートリポジトリの削除<br />
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>$ git remote rm origin
 </pre></div>
-</td></tr></table>
-
-<ul>
-<li>リモートリポジトリの変更  </li>
-</ul>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>$ git remote set-url origin &lt;new url&gt;
+</td></tr></table></p>
+</li>
+<li>
+<p>リモートリポジトリの変更<br />
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>$ git remote set-url origin &lt;new url&gt;
 </pre></div>
-</td></tr></table>
-
-<ul>
-<li>プッシュする  </li>
-</ul>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+</td></tr></table></p>
+</li>
+<li>
+<p>プッシュする<br />
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1
 2</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>$ git push -u origin master  
 <span class="o">(</span>2回目以降は <span class="sb">`</span>$ git push<span class="sb">`</span> で可能<span class="o">)</span>
 </pre></div>
-</td></tr></table>
-
-<ul>
-<li>ブランチを作成  </li>
-</ul>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+</td></tr></table></p>
+</li>
+<li>
+<p>ブランチを作成<br />
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1
 2</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>$ git branch &lt;ブランチ名&gt;  
 <span class="o">(</span>例<span class="o">)</span> <span class="sb">`</span>$ git branch new-branch
 </pre></div>
-</td></tr></table>
-
-<ul>
-<li>ブランチの一覧を表示(＊が付いているのが現在のブランチ)  </li>
-</ul>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>$ git branch
+</td></tr></table></p>
+</li>
+<li>
+<p>ブランチの一覧を表示(＊が付いているのが現在のブランチ)<br />
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>$ git branch
 </pre></div>
-</td></tr></table>
+</td></tr></table></p>
+</li>
+</ul>
                 
                   
                 
