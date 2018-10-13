@@ -1,8 +1,8 @@
-site_name: My Memo
+site_name: Tani Memo
 
-pages:
-- [index.md, Home]
-- [memo.md, MEMO]
+# Repository
+repo_name: wiki
+repo_url: https://github.com/tanikento/wiki
 
 # Configuration
 theme:
@@ -11,7 +11,7 @@ theme:
   feature:
     tabs: true
   palette:
-    primary: 'indigo'
+    primary: 'brown'
     accent: 'indigo'
   font:
     text: 'Roboto'
@@ -22,12 +22,21 @@ extra:
   search:
     language: 'jp'
 
+extra_css:
+    - "//fonts.googleapis.com/earlyaccess/notosansjp.css"
+    - "//fonts.googleapis.com/css?family=Open+Sans:600,800"
+    - "css/custom.css"
+
 # Extensions
 markdown_extensions:
   - admonition
   - footnotes
+  - def_list
+  - pymdownx.keys
+  - pymdownx.superfences
+  - pymdownx.mark
   - codehilite:
-      guess_lang: false
+      linenums: true
   - toc:
       permalink: true
   - pymdownx.tasklist:
