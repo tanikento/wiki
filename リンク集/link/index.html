@@ -36,7 +36,7 @@
     
     
       
-        <title>Linux - Tani Memo</title>
+        <title>Link - Tani Memo</title>
       
     
     
@@ -104,10 +104,6 @@
     <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
     <label class="md-overlay" data-md-component="overlay" for="__drawer"></label>
     
-      <a href="../../#linux" tabindex="1" class="md-skip">
-        Skip to content
-      </a>
-    
     
       <header class="md-header" data-md-component="header">
   <nav class="md-header-nav md-grid">
@@ -130,7 +126,7 @@
                 Tani Memo
               </span>
               <span class="md-header-nav__topic">
-                Linux
+                Link
               </span>
             
           
@@ -229,7 +225,7 @@
   
     <li class="md-tabs__item">
       
-        <a href="../../リンク集/link/" title="リンク集" class="md-tabs__link">
+        <a href="./" title="リンク集" class="md-tabs__link md-tabs__link--active">
           リンク集
         </a>
       
@@ -261,7 +257,7 @@
   
     <li class="md-tabs__item">
       
-        <a href="../docker/" title="用語集" class="md-tabs__link md-tabs__link--active">
+        <a href="../../用語集/docker/" title="用語集" class="md-tabs__link">
           用語集
         </a>
       
@@ -332,7 +328,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../リンク集/" title="リンク集" class="md-nav__link">
+    <a href="../" title="リンク集" class="md-nav__link">
       リンク集
     </a>
   </li>
@@ -356,7 +352,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../" title="用語集" class="md-nav__link">
+    <a href="../../用語集/" title="用語集" class="md-nav__link">
       用語集
     </a>
   </li>
@@ -366,10 +362,12 @@
       
       
 
+  
 
-  <li class="md-nav__item md-nav__item--nested">
+
+  <li class="md-nav__item md-nav__item--active md-nav__item--nested">
     
-      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-5" type="checkbox" id="nav-5">
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-5" type="checkbox" id="nav-5" checked>
     
     <label class="md-nav__link" for="nav-5">
       リンク集
@@ -385,11 +383,18 @@
           
           
 
+  
 
-  <li class="md-nav__item">
-    <a href="../../リンク集/link/" title="Link" class="md-nav__link">
+
+  <li class="md-nav__item md-nav__item--active">
+    
+    <input class="md-toggle md-nav__toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+    
+    
+    <a href="./" title="Link" class="md-nav__link md-nav__link--active">
       Link
     </a>
+    
   </li>
 
         
@@ -618,12 +623,10 @@
       
       
 
-  
 
-
-  <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+  <li class="md-nav__item md-nav__item--nested">
     
-      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-7" type="checkbox" id="nav-7" checked>
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-7" type="checkbox" id="nav-7">
     
     <label class="md-nav__link" for="nav-7">
       用語集
@@ -641,7 +644,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../docker/" title="Docker" class="md-nav__link">
+    <a href="../../用語集/docker/" title="Docker" class="md-nav__link">
       Docker
     </a>
   </li>
@@ -653,7 +656,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../git/" title="Git" class="md-nav__link">
+    <a href="../../用語集/git/" title="Git" class="md-nav__link">
       Git
     </a>
   </li>
@@ -663,56 +666,11 @@
           
           
 
-  
 
-
-  <li class="md-nav__item md-nav__item--active">
-    
-    <input class="md-toggle md-nav__toggle" data-md-toggle="toc" type="checkbox" id="__toc">
-    
-      
-    
-    
-      <label class="md-nav__link md-nav__link--active" for="__toc">
-        Linux
-      </label>
-    
-    <a href="./" title="Linux" class="md-nav__link md-nav__link--active">
+  <li class="md-nav__item">
+    <a href="../../用語集/linux/" title="Linux" class="md-nav__link">
       Linux
     </a>
-    
-      
-<nav class="md-nav md-nav--secondary">
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">目次</label>
-    <ul class="md-nav__list" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#linux_1" title="■ Linuxとは" class="md-nav__link">
-    ■ Linuxとは
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#linux_2" title="■ Linuxコマンド集" class="md-nav__link">
-    ■ Linuxコマンド集
-  </a>
-  
-</li>
-      
-      
-      
-      
-      
-    </ul>
-  
-</nav>
-    
   </li>
 
         
@@ -722,7 +680,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../memo/" title="研修MEMO" class="md-nav__link">
+    <a href="../../用語集/memo/" title="研修MEMO" class="md-nav__link">
       研修MEMO
     </a>
   </li>
@@ -740,95 +698,17 @@
               </div>
             
             
-              <div class="md-sidebar md-sidebar--secondary" data-md-component="toc">
-                <div class="md-sidebar__scrollwrap">
-                  <div class="md-sidebar__inner">
-                    
-<nav class="md-nav md-nav--secondary">
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">目次</label>
-    <ul class="md-nav__list" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#linux_1" title="■ Linuxとは" class="md-nav__link">
-    ■ Linuxとは
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#linux_2" title="■ Linuxコマンド集" class="md-nav__link">
-    ■ Linuxコマンド集
-  </a>
-  
-</li>
-      
-      
-      
-      
-      
-    </ul>
-  
-</nav>
-                  </div>
-                </div>
-              </div>
-            
           
           <div class="md-content">
             <article class="md-content__inner md-typeset">
               
                 
-                  <a href="https://github.com/tanikento/wiki/edit/master/docs/用語集/linux.md" title="編集" class="md-icon md-content__icon">&#xE3C9;</a>
+                  <a href="https://github.com/tanikento/wiki/edit/master/docs/リンク集/link.md" title="編集" class="md-icon md-content__icon">&#xE3C9;</a>
                 
                 
-                <h1 id="linux">Linux<a class="headerlink" href="#linux" title="Permanent link">&para;</a></h1>
-<h2 id="linux_1">■ Linuxとは<a class="headerlink" href="#linux_1" title="Permanent link">&para;</a></h2>
-<p>OSの一種でオープンソースのOS。<br />
-リーナスという天才のアイディアと無数のエンジニアのボランティア精神がいつの間にか世界に広がっている。  </p>
-<h2 id="linux_2">■ Linuxコマンド集<a class="headerlink" href="#linux_2" title="Permanent link">&para;</a></h2>
-<ul>
-<li>
-<p>現在作業中のディレクトリを表示<br />
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>$ <span class="nb">pwd</span>
-</pre></div>
-</td></tr></table></p>
-</li>
-<li>
-<p>ディレクトリの中身を表示<br />
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>$ ls
-</pre></div>
-</td></tr></table></p>
-</li>
-<li>
-<p>ホームディレクトリへ移動<br />
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>$ <span class="nb">cd</span>
-</pre></div>
-</td></tr></table></p>
-</li>
-<li>
-<p>指定したディレクトリに移動<br />
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>$ <span class="nb">cd</span> &lt;移動先のディレクトリ&gt;
-</pre></div>
-</td></tr></table></p>
-</li>
-<li>
-<p>ファイルを移動<br />
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>$ mv &lt;移動させたいファイル&gt; &lt;移動後のファイル名&gt;
-</pre></div>
-</td></tr></table></p>
-</li>
-<li>
-<p>ファイルをコピー<br />
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>$ cp &lt;コピーしたいファイルのディレクトリ/ファイル名&gt;
-</pre></div>
-</td></tr></table></p>
-</li>
-</ul>
+                  <h1>Link</h1>
+                
+                <p>hello</p>
                 
                   
                 
@@ -849,7 +729,7 @@
     <div class="md-footer-nav">
       <nav class="md-footer-nav__inner md-grid">
         
-          <a href="../git/" title="Git" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+          <a href="../../用語集/" title="用語集" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
             <div class="md-flex__cell md-flex__cell--shrink">
               <i class="md-icon md-icon--arrow-back md-footer-nav__button"></i>
             </div>
@@ -858,19 +738,19 @@
                 <span class="md-footer-nav__direction">
                   前
                 </span>
-                Git
+                用語集
               </span>
             </div>
           </a>
         
         
-          <a href="../memo/" title="研修MEMO" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
+          <a href="../../環境構築/Docker/mkdocs_docker/" title="MkDocs / Docker" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
             <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
               <span class="md-flex__ellipsis">
                 <span class="md-footer-nav__direction">
                   次
                 </span>
-                研修MEMO
+                MkDocs / Docker
               </span>
             </div>
             <div class="md-flex__cell md-flex__cell--shrink">
